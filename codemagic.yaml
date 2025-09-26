@@ -1,17 +1,17 @@
 workflows:
   android-workflow:
-    name: Build Android APK
-    max_build_duration: 60
+    name: Build iOS17 Launcher APK
     environment:
-      sdk: "android-33"
-      java: 17
+      vars:
+        JAVA_HOME: /usr/lib/jvm/java-17-openjdk
+      android:
+        compile-sdk: 33
+        target-sdk: 33
+        min-sdk: 21
+        build-tools: 34.0.0
     scripts:
-      - name: Build APK
+      - name: Clean and Build APK
         script: |
           ./gradlew clean assembleProductionRelease
     artifacts:
       - app/build/outputs/**/*.apk
-    publishing:
-      email:
-        recipients:
-          - your-keithantodc@gmail.com
