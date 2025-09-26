@@ -4,11 +4,6 @@ workflows:
     environment:
       vars:
         JAVA_HOME: /usr/lib/jvm/java-17-openjdk
-      android:
-        compile-sdk: 33
-        target-sdk: 33
-        min-sdk: 21
-        build-tools: 34.0.0
     scripts:
       - name: Clean and Build APK
         script: |
