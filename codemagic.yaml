@@ -1,9 +1,6 @@
 workflows:
   android-workflow:
     name: Build iOS17 Launcher APK
-    environment:
-      vars:
-        JAVA_HOME: /usr/lib/jvm/java-17-openjdk
     scripts:
       - name: Clean and Build APK
         script: |
